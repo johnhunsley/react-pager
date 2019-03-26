@@ -6,7 +6,7 @@ import PageControls from './PageControls'
 class PagerContainer extends Component {
 
     state = {
-        filterText: '',
+        filterText: 'hi there. :-)',
         colNames: [
             {
                 label: 'Col1',
@@ -35,10 +35,16 @@ class PagerContainer extends Component {
         ]
     }
 
+    handleSearch = event => {
+        event.preventDefault();
+        this.setState({filterText: event.target.value})
+        console.log(this.state.filterText)
+    }
+
     render() {
         return (
             <div className="container">
-                <SearchBar filterText={this.state.filterText}/>
+                <SearchBar filterText={this.state.filterText} handleChange={this.handleSearch}/>
                 <ResultsTable colNames={this.state.colNames} items={this.state.items}/>
                 <PageControls />
             </div>

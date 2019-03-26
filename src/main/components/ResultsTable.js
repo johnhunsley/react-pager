@@ -20,16 +20,18 @@ class ResultsTable extends Component {
         );
 
         return (
-            <table className="table table-striped">
-                <thead>
-                    <tr>
-                        {head}
-                    </tr>
-                </thead>
-                <tbody>
-                    {data}
-                </tbody>
-            </table>
+            <div className="container">
+                <table className="table table-striped">
+                    <thead>
+                        <tr>
+                            {head}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {data}
+                    </tbody>
+                </table>
+            </div>
         )
     }
 }

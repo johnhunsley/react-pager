@@ -1,23 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class SearchBar extends Component {
-
-    render() {
-        const filterText = this.props.filterText;
-
-        return (
-             <form>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1">Search</span>
-                    </div>
-                    <input className="form-control" type="text" value={filterText} />
-                </div>
-             </form>
-        )
-
-    }
-
-}
+const SearchBar = ({filterText, handleChange}) => (
+    <div className="container">
+       <form>
+          <div className="input-group mb-3">
+             <div className="input-group-prepend">
+                <span className="input-group-text" id="basic-addon1">Search</span>
+             </div>
+             <input className="form-control" type="text" id="filter" name="filter" value={filterText} onChange={handleChange} />
+          </div>
+       </form>
+    </div>
+)
 
 export default SearchBar;
