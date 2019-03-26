@@ -38,7 +38,6 @@ class PagerContainer extends Component {
     handleSearch = event => {
         event.preventDefault();
         this.setState({filterText: event.target.value})
-        console.log(this.state.filterText)
     }
 
     render() {
