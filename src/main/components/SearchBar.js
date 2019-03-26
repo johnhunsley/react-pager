@@ -11,7 +11,7 @@ class SearchBar extends Component {
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">Search</span>
                     </div>
-                    <imput className="form-control" type="text" value={filterText} />
+                    <input className="form-control" type="text" value={filterText} />
                 </div>
              </form>
         )
