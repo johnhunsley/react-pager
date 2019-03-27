@@ -8,21 +8,27 @@ class ResultsTable extends Component {
         const items = this.props.items;
 
         const head = colNames.map((colName) =>
-           <td>{colName.label}</td>
+           <td><b>{colName.label}</b></td>
         );
 
-        const data = items.map((item) =>
-            <tr>
-                <td>{item.name}</td>
-                <td>{item.interestRate}</td>
-                <td>{item.value}</td>
-            </tr>
-        );
+        let data = '';
+
+        if(items) {
+            data = items.map((item) =>
+                <tr>
+                    <td>{item.name}</td>
+                    <td>{item.interestRate}</td>
+                    <td>{item.value}</td>
+                </tr>
+            );
+        } else {
+            data = 'No Items';
+        }
 
         return (
             <div className="container">
                 <table className="table table-striped">
-                    <thead>
+                    <thead className="bg-light">
                         <tr>
                             {head}
                         </tr>

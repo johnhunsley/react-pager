@@ -7,9 +7,9 @@ class PageControls extends Component {
 
         return(
             <div className="container">
-                <button className="btn btn-light">Prev</button>
-                    <span>somethign here</span>
-                <button className="btn btn-light">Next</button>
+                <button className="btn btn-sm btn-outline-info">Prev</button>
+                    &nbsp;<span>1 2 3 4 5</span>&nbsp;
+                <button className="btn btn-sm btn-outline-info">Next</button>
             </div>
         )
     }
