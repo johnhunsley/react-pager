@@ -13,9 +13,9 @@ class ResultsTable extends Component {
 
         const data = items.map((item) =>
             <tr>
-                <td>{item.something1}</td>
-                <td>{item.something2}</td>
-                <td>{item.something3}</td>
+                <td>{item.name}</td>
+                <td>{item.interestRate}</td>
+                <td>{item.value}</td>
             </tr>
         );
 

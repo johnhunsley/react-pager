@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SearchBar from './SearchBar';
 import ResultsTable from './ResultsTable';
 import PageControls from './PageControls'
+import {getAccountsByName} from './ResourceClient'
 
 class PagerContainer extends Component {
 
@@ -9,35 +10,31 @@ class PagerContainer extends Component {
         filterText: 'hi there. :-)',
         colNames: [
             {
-                label: 'Col1',
+                label: 'Account Name',
                 value: 'something1'
             },
             {
-                label: 'Col2',
+                label: 'Interest Rate',
                 value: 'something2'
             },
             {
-                label: 'Col3',
+                label: 'Balance',
                 value: 'something3'
             }
         ],
         items: [
-            {
-                something1: 'steak1',
-                something2: 'steak2',
-                something3: 'steak3'
-            },
-            {
-                something1: 'cheese1',
-                something2: 'cheese2',
-                something3: 'cheese3'
-            }
+
         ]
     }
 
     handleSearch = event => {
         event.preventDefault();
-        this.setState({filterText: event.target.value})
+        let filter = event.target.value;
+        this.setState({filterText: filter})
+        getAccountsByName(filter, 0, 10, response => {
+            console.log(response._embedded);
+            this.setState({items: response._embedded.savingsAccounts})
+        })
     }
 
     render() {
